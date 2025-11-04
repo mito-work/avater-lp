@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>あなたの“なりたい”をアバターに。 - アバター作成サービス | Avatar Studio</title>
+    <meta name="description" content="最新のJamstack技術で高品質なオリジナルアバターを最速制作。デザイン〜納品まで専任担当が丁寧にサポート。個人・企業向けの料金プラン、制作実績、よくある質問をご紹介。" />
+    <meta property="og:title" content="あなたの“なりたい”をアバターに。- Avatar Studio" />
+    <meta property="og:description" content="最新のJamstack技術で高品質なオリジナルアバターを最速制作。まずは無料相談から。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="theme-color" content="#f97316" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --brand: #f97316; /* orange-500 */
+        --ink: #0f172a; /* slate-900 */
+        --muted: #475569; /* slate-600 */
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Noto Sans JP, 'Hiragino Kaku Gothic ProN', Meiryo, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      }
+      .container {
+        max-width: 1200px;
+      }
+      .glass {
+        backdrop-filter: saturate(180%) blur(10px);
+        background: rgba(255, 255, 255, 0.6);
+      }
+      .floating-shape {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(60% 50% at 70% 20%, rgba(249, 115, 22, 0.2), transparent 60%), radial-gradient(40% 40% at 10% 80%, rgba(250, 204, 21, 0.18), transparent 60%);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50">
+      <div class="glass border-b border-white/40">
+        <nav class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+          <a href="#hero" class="flex items-center gap-2">
+            <span class="inline-block w-8 h-8 rounded-lg bg-gradient-to-tr from-orange-500 via-yellow-400 to-red-500"></span>
+            <span class="text-2xl font-bold text-orange-500">Avatar Studio</span>
+          </a>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 text-slate-700" aria-label="メニューを開閉">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
+          <ul id="gNav" class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <li><a href="#about" class="hover:text-orange-500 transition-colors">サービス</a></li>
+            <li><a href="#works" class="hover:text-orange-500 transition-colors">実績</a></li>
+            <li><a href="#pricing" class="hover:text-orange-500 transition-colors">料金</a></li>
+            <li><a href="#faq" class="hover:text-orange-500 transition-colors">FAQ</a></li>
+            <li><a href="#contact" class="ml-2 inline-flex items-center gap-2 bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-2.5 px-4 rounded-full shadow hover:opacity-90 transition">無料相談</a></li>
+          </ul>
+        </nav>
+        <!-- mobile dropdown -->
+        <div id="gNavDrawer" class="md:hidden hidden border-t border-white/40 bg-white/70 backdrop-blur">
+          <ul class="container mx-auto px-4 md:px-8 py-4 grid gap-3 text-base">
+            <li><a href="#about" class="block py-2">サービス</a></li>
+            <li><a href="#works" class="block py-2">実績</a></li>
+            <li><a href="#pricing" class="block py-2">料金</a></li>
+            <li><a href="#faq" class="block py-2">FAQ</a></li>
+            <li><a href="#contact" class="block py-2 font-semibold text-orange-600">無料相談</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="relative overflow-hidden">
+      <div class="floating-shape"></div>
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="min-h-[72vh] md:min-h-[78vh] grid md:grid-cols-2 gap-10 items-center">
+          <div class="space-y-6 pt-12 md:pt-0">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-orange-600 bg-orange-50 rounded-full px-3 py-1 w-fit">48時間以内の初稿提案*</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-slate-900">あなたの“なりたい”を<br class="md:hidden" />アバターに。</h1>
+            <p class="text-lg text-slate-600">高品質なオリジナルアバターを最速制作。<span class="hidden sm:inline">用途に合わせたスタイル提案と、納品後の運用サポートまでワンストップ。</span></p>
+            <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <a href="#contact" class="inline-flex items-center justify-center bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3 px-7 rounded-full shadow-lg hover:opacity-90 transition">無料で相談してみる</a>
+              <a href="#works" class="inline-flex items-center justify-center border border-slate-300 bg-white text-slate-800 font-semibold py-3 px-7 rounded-full hover:bg-slate-100 transition">実績を見る</a>
+            </div>
+            <p class="text-xs text-slate-500">* テンプレート利用時。要件・混雑状況により変動します。</p>
+            <div class="flex items-center gap-6 pt-2 text-sm text-slate-500">
+              <div class="flex items-center gap-2"><span class="i w-2 h-2 rounded-full bg-green-500"></span> 著作権譲渡OK</div>
+              <div class="flex items-center gap-2"><span class="i w-2 h-2 rounded-full bg-blue-500"></span> 商用利用OK</div>
+            </div>
+          </div>
+          <div class="relative hidden md:block">
+            <div class="absolute -inset-6 bg-gradient-to-tr from-orange-500/10 to-yellow-300/10 rounded-3xl blur-2xl"></div>
+            <div class="relative bg-white rounded-3xl shadow-xl p-4">
+              <!-- <img src="https://placehold.co/800x600/png" alt="アバター制作のモックアップ" class="rounded-2xl w-full h-auto" loading="lazy" /> -->
+              <img src="./assets/img/avater1.png" alt="アバター制作のモックアップ" class="rounded-2xl w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm text-slate-600">
+          <div class="bg-white rounded-xl p-4 shadow-sm">SNSアイコン</div>
+          <div class="bg-white rounded-xl p-4 shadow-sm">Vtuber/配信</div>
+          <div class="bg-white rounded-xl p-4 shadow-sm">法人キャラクター</div>
+          <div class="bg-white rounded-xl p-4 shadow-sm">資料・広告</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="about" class="py-20">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">選ばれる理由</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="bg-white p-6 rounded-2xl shadow-md text-center">
+            <div class="mx-auto mb-4 w-16 h-16 grid place-items-center rounded-2xl bg-orange-50 text-orange-500">
+              <!-- original icon: fast delivery -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-10 h-10" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M24 96H88M24 128H72M24 160H88" />
+                  <rect x="104" y="72" width="128" height="112" rx="14" />
+                  <path d="M104 108H232" />
+                  <path d="M168 72V108" />
+                  <path d="M120 132h56m0 0l-14-14m14 14l-14 14" />
+                </g>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">爆速納品</h3>
+            <p class="text-slate-600">テンプレート利用時は<span class="font-semibold">24時間以内</span>の納品にも対応。</p>
+          </article>
+          <article class="bg-white p-6 rounded-2xl shadow-md text-center">
+            <div class="mx-auto mb-4 w-16 h-16 grid place-items-center rounded-2xl bg-orange-50 text-orange-500">
+              <!-- diamond icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-10 h-10" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M32 96L128 32L224 96L128 224Z" />
+                  <path d="M128 32L96 96H160L128 32Z" />
+                  <path d="M32 96L96 96L128 224L32 96Z" />
+                  <path d="M224 96L160 96L128 224L224 96Z" />
+                  <path d="M96 96L128 144L160 96" />
+                </g>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">高品質デザイン</h3>
+            <p class="text-slate-600">ヒアリングを徹底し、用途に最適なスタイルをご提案。</p>
+          </article>
+          <article class="bg-white p-6 rounded-2xl shadow-md text-center">
+            <div class="mx-auto mb-4 w-16 h-16 grid place-items-center rounded-2xl bg-orange-50 text-orange-500">
+              <!-- support icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-10 h-10" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M32 160c20 0 32 16 56 16h72c12 0 24 4 32 12s4 28-8 28H92c-24 0-44-8-60-24l-8-8" />
+                  <path d="M160 72c-8-8-20-8-28 0-8-8-20-8-28 0-8 8-8 20 0 28l28 28 28-28c8-8 8-20 0-28Z" />
+                </g>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">手厚いサポート</h3>
+            <p class="text-slate-600">納品後の使い方・差し替えも<span class="font-semibold">専任担当</span>が対応。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 bg-gradient-to-b from-white to-slate-100/60">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">制作の流れ</h2>
+        <ol class="grid md:grid-cols-4 gap-6">
+          <li class="bg-white rounded-2xl p-6 shadow-sm">
+            <p class="text-xs text-orange-600 font-semibold">Step 1</p>
+            <h3 class="text-lg font-semibold mb-2">無料相談</h3>
+            <p class="text-slate-600">目的・テイスト・納期を確認。参考画像があれば共有ください。</p>
+          </li>
+          <li class="bg-white rounded-2xl p-6 shadow-sm">
+            <p class="text-xs text-orange-600 font-semibold">Step 2</p>
+            <h3 class="text-lg font-semibold mb-2">デザイン提案</h3>
+            <p class="text-slate-600">初稿をご提案。プランに応じて修正を行います。</p>
+          </li>
+          <li class="bg-white rounded-2xl p-6 shadow-sm">
+            <p class="text-xs text-orange-600 font-semibold">Step 3</p>
+            <h3 class="text-lg font-semibold mb-2">仕上げ</h3>
+            <p class="text-slate-600">最終調整・書き出し。用途別に最適な形式でご用意。</p>
+          </li>
+          <li class="bg-white rounded-2xl p-6 shadow-sm">
+            <p class="text-xs text-orange-600 font-semibold">Step 4</p>
+            <h3 class="text-lg font-semibold mb-2">納品・運用</h3>
+            <p class="text-slate-600">ガイド付きで納品。納品後の差し替え・展開も支援。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="py-20 bg-slate-100">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold">制作実績</h2>
+          <a href="#works-page" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-orange-600 hover:underline">実績一覧へ</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6" id="works-container">
+          <div class="col-span-full text-center text-slate-500">実績を読み込み中です...</div>
+        </div>
+        <div class="text-center mt-10 md:hidden">
+          <a href="#works-page" class="inline-flex border border-slate-300 bg-white text-slate-800 font-semibold py-3 px-8 rounded-full hover:bg-slate-100 transition">実績一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">お客様の声</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <figure class="bg-white rounded-2xl p-6 shadow-sm">
+            <blockquote class="text-slate-700">要件整理から丁寧に寄り添ってくれ、初回提案でほぼ決まりました。納品までスムーズ！</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">個人VTuber / N様</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl p-6 shadow-sm">
+            <blockquote class="text-slate-700">社内資料・広告にも使えるバリエーションを用意していただき、大満足です。</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">IT企業 / 広報ご担当</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl p-6 shadow-sm">
+            <blockquote class="text-slate-700">スピード・品質・費用のバランスが良く、リピート確定です。</blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500">クリエイター / S様</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gradient-to-b from-slate-100/60 to-white">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">料金プラン</h2>
+        <div class="grid md:grid-cols-3 gap-6 items-stretch">
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <h3 class="text-xl font-semibold mb-3 text-orange-500">ライト</h3>
+            <p class="text-4xl font-extrabold mb-1">¥15,000<span class="text-lg font-normal text-slate-600">〜</span></p>
+            <p class="text-slate-600 mb-6">SNSアイコンや個人利用に</p>
+            <ul class="text-left space-y-2 mb-8 text-sm">
+              <li>✅ シンプルなアバター制作</li>
+              <li>✅ 修正1回まで</li>
+            </ul>
+            <a href="#contact" class="inline-flex bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3 px-7 rounded-full shadow hover:opacity-90 transition">このプランで相談</a>
+          </div>
+          <div class="relative bg-white p-6 rounded-2xl shadow-md text-center border-2 border-orange-500 scale-105">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-orange-500 text-white shadow">人気</span>
+            <h3 class="text-xl font-semibold mb-3 text-orange-500">スタンダード</h3>
+            <p class="text-4xl font-extrabold mb-1">¥30,000<span class="text-lg font-normal text-slate-600">〜</span></p>
+            <p class="text-slate-600 mb-6">配信・ビジネス用途に</p>
+            <ul class="text-left space-y-2 mb-8 text-sm">
+              <li>✅ オリジナルアバター制作</li>
+              <li>✅ 修正3回まで</li>
+              <li>✅ 著作権譲渡</li>
+            </ul>
+            <a href="#contact" class="inline-flex bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3 px-7 rounded-full shadow hover:opacity-90 transition">このプランで相談</a>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm text-center">
+            <h3 class="text-xl font-semibold mb-3 text-orange-500">プレミアム</h3>
+            <p class="text-4xl font-extrabold mb-1">¥50,000<span class="text-lg font-normal text-slate-600">〜</span></p>
+            <p class="text-slate-600 mb-6">フルカスタム・企業向け</p>
+            <ul class="text-left space-y-2 mb-8 text-sm">
+              <li>✅ フルカスタマイズ</li>
+              <li>✅ 無制限修正</li>
+              <li>✅ 著作権譲渡</li>
+              <li>✅ 納品後サポート</li>
+            </ul>
+            <a href="#contact" class="inline-flex bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3 px-7 rounded-full shadow hover:opacity-90 transition">このプランで相談</a>
+          </div>
+        </div>
+        <p class="mt-6 text-center text-xs text-slate-500">表示価格は目安です。内容によりお見積りいたします。</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20">
+      <div class="container mx-auto px-4 md:px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">よくあるご質問</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <details class="bg-white rounded-2xl p-5 shadow-sm group" open>
+            <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">納期はどれくらいですか？ <span class="ml-4 text-slate-400 group-open:rotate-180 transition">▾</span></summary>
+            <p class="mt-3 text-slate-600">テンプレート利用で最短24時間、フルカスタムで1〜2週間が目安です。</p>
+          </details>
+          <details class="bg-white rounded-2xl p-5 shadow-sm group">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">商用利用や著作権は？ <span class="ml-4 text-slate-400 group-open:rotate-180 transition">▾</span></summary>
+            <p class="mt-3 text-slate-600">スタンダード以上で著作権譲渡に対応。用途に合わせてご案内します。</p>
+          </details>
+          <details class="bg-white rounded-2xl p-5 shadow-sm group">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">修正は何回まで可能？ <span class="ml-4 text-slate-400 group-open:rotate-180 transition">▾</span></summary>
+            <p class="mt-3 text-slate-600">ライト:1回 / スタンダード:3回 / プレミアム:無制限です。</p>
+          </details>
+          <details class="bg-white rounded-2xl p-5 shadow-sm group">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-semibold">どんなテイストに対応できますか？ <span class="ml-4 text-slate-400 group-open:rotate-180 transition">▾</span></summary>
+            <p class="mt-3 text-slate-600">アニメ風、ミニキャラ、海外風フラット、企業向けマスコットなど幅広く対応します。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-slate-100">
+      <div class="container mx-auto px-4 md:px-8 max-w-2xl">
+        <h2 class="text-4xl font-bold text-center mb-3">お問い合わせ</h2>
+        <p class="text-center text-slate-600 mb-8">ご質問やご相談など、お気軽にお問い合わせください。</p>
+
+        <!-- thewaggleアカウント -->
+        <form action="https://formspree.io/f/xblzeaag" method="POST" id="contactForm" class="bg-white p-8 rounded-2xl shadow-lg space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-700 mb-1">お名前</label>
+            <input type="text" id="name" name="お名前" required class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700 mb-1">メールアドレス</label>
+            <input type="email" id="email" name="メールアドレス" required class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" />
+          </div>
+          <div>
+            <label for="company" class="block text-sm font-medium text-slate-700 mb-1">会社名 (任意)</label>
+            <input type="text" id="company" name="会社名" class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">お問い合わせ内容</label>
+            <textarea id="message" name="お問い合わせ内容" rows="5" required class="w-full px-4 py-2 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition">送信する</button>
+          </div>
+        </form>
+        <div id="successMessage" class="hidden mt-8 p-6 bg-green-100 text-green-800 rounded-xl text-center">
+          <h3 class="text-2xl font-semibold mb-2">送信が完了しました！</h3>
+          <p>お問い合わせありがとうございます。内容を確認後、担当者よりご連絡いたします。</p>
+        </div>
+        <!-- ▲▲▲▲▲▲▲▲▲▲▲ ここまで：Formspree（APIは変更しない） ▲▲▲▲▲▲▲▲▲▲▲ -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12">
+      <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-8 items-center">
+        <p class="text-center md:text-left">&copy; 2024 Avatar Studio. All Rights Reserved.</p>
+        <nav class="justify-center hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-white">サービス</a>
+          <a href="#works" class="hover:text-white">実績</a>
+          <a href="#pricing" class="hover:text-white">料金</a>
+          <a href="#contact" class="hover:text-white">お問い合わせ</a>
+        </nav>
+        <div class="flex justify-center md:justify-end items-center gap-4 text-sm">
+          <a href="#" class="hover:text-white">Twitter</a>
+          <a href="#" class="hover:text-white">Instagram</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sticky CTA (mobile) -->
+    <div class="md:hidden fixed bottom-4 inset-x-4 z-50">
+      <a href="#contact" class="block text-center bg-gradient-to-r from-red-500 via-yellow-400 to-orange-500 text-white font-semibold py-3.5 rounded-full shadow-xl">無料で相談する</a>
+    </div>
+
+    <!-- Back to top -->
+    <button id="toTop" class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-200 grid place-items-center text-slate-600 hover:text-orange-600 hidden" aria-label="ページ上部へ戻る">▲</button>
+
+    <script>
+      // --- Mobile menu toggle ---
+      const menuBtn = document.getElementById('menuBtn');
+      const gNavDrawer = document.getElementById('gNavDrawer');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => gNavDrawer.classList.toggle('hidden'));
+      }
+
+      // --- Back to top ---
+      const toTop = document.getElementById('toTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          toTop.classList.remove('hidden');
+        } else {
+          toTop.classList.add('hidden');
+        }
+      });
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+
+    <script>
+      // ▼▼▼▼▼▼▼▼▼▼▼ ここから：microCMS（APIは変更しない） ▼▼▼▼▼▼▼▼▼▼▼
+      const serviceDomain = 'miyanomori';
+      const apiKey = 'c7aa2b767fd2465ba1146723cc74a6eff349';
+      const endpoint = 'blogs';
+      const container = document.getElementById('works-container');
+
+      const fetchWorks = () => {
+        fetch(`https://${serviceDomain}.microcms.io/api/v1/${endpoint}?limit=3`, {
+          headers: { 'X-MICROCMS-API-KEY': apiKey },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('APIの取得に失敗しました。');
+            }
+            return response.json();
+          })
+          .then((data) => {
+            if (data.contents && data.contents.length > 0) {
+              container.innerHTML = '';
+              data.contents.forEach((work) => {
+                const card = document.createElement('a');
+                card.href = `work-detail.html?id=${work.id}`;
+                card.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer block';
+
+                const eyecatchUrl = work.eyecatch && work.eyecatch.url ? work.eyecatch.url : 'https://placehold.co/600x400';
+                const title = work.title ? work.title : 'タイトルがありません';
+                const description = work.content ? work.content.replace(/<[^>]*>?/gm, '').substring(0, 50) + '...' : '説明がありません';
+
+                card.innerHTML = `
+                  <img src="${eyecatchUrl}" alt="${title}" class="w-full h-48 object-cover" loading="lazy">
+                  <div class="p-4">
+                    <h3 class="text-xl font-semibold mb-2">${title}</h3>
+                    <p class="text-slate-600 text-sm">${description}</p>
+                  </div>
+                `;
+                container.appendChild(card);
+              });
+            } else {
+              container.innerHTML = '<div class="text-center col-span-full text-slate-500">実績が見つかりませんでした。</div>';
+            }
+          })
+          .catch((error) => {
+            console.error('データの取得中にエラーが発生しました:', error);
+            container.innerHTML = '<div class="text-center col-span-full text-red-500">データの読み込みに失敗しました。APIキーまたはサービスドメインを確認してください。</div>';
+          });
+      };
+
+      window.onload = fetchWorks;
+      // ▲▲▲▲▲▲▲▲▲▲▲ ここまで：microCMS（APIは変更しない） ▲▲▲▲▲▲▲▲▲▲▲
+    </script>
+
+    <script>
+      // ▼▼▼▼▼▼▼▼▼▼▼ ここから：Formspree（APIは変更しない） ▼▼▼▼▼▼▼▼▼▼▼
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+
+      contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        fetch(event.target.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+        })
+          .then((response) => {
+            if (response.ok) {
+              contactForm.reset();
+              contactForm.style.display = 'none';
+              successMessage.style.display = 'block';
+            } else {
+              response.json().then((data) => {
+                if (Object.hasOwn(data, 'errors')) {
+                  alert(data['errors'].map((error) => error['message']).join(', '));
+                } else {
+                  alert('Oops! There was a problem submitting your form');
+                }
+              });
+            }
+          })
+          .catch((error) => {
+            alert('送信中にエラーが発生しました。もう一度お試しください。');
+            console.error('Error:', error);
+          });
+      });
+      // ▲▲▲▲▲▲▲▲▲▲▲ ここまで：Formspree（APIは変更しない） ▲▲▲▲▲▲▲▲▲▲▲
+    </script>
+
+    <!-- Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Avatar Studio",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png",
+        "sameAs": ["https://twitter.com/", "https://instagram.com/"]
+      }
+    </script>
+  </body>
+</html>
